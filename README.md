@@ -32,7 +32,15 @@ https://hub.docker.com/r/mcandre/docker-multi-cpp/
 $ make
 
 $ docker images | grep multi-cpp
-...
+mcandre/docker-multi-cpp               ubuntu                fd554469e483        2 minutes ago       550MB
+mcandre/docker-multi-cpp               slackware             f613817169ce        6 minutes ago       110MB
+mcandre/docker-multi-cpp               opensuse              5e6dd0740fcc        21 minutes ago      256MB
+mcandre/docker-multi-cpp               mageia                118e1e73d44a        40 minutes ago      495MB
+mcandre/docker-multi-cpp               fedora                f7da80d74711        45 minutes ago      508MB
+mcandre/docker-multi-cpp               debian                59138cbffa76        About an hour ago   646MB
+mcandre/docker-multi-cpp               centos                92ed0c28630a        About an hour ago   357MB
+mcandre/docker-multi-cpp               arch                  426dc302a06e        About an hour ago   1.51GB
+mcandre/docker-multi-cpp               alpine                fbdd3aa155c4        About an hour ago   225MB
 ```
 
 # PUBLISH IMAGES
