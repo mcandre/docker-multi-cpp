@@ -1,6 +1,6 @@
-.PHONY: mcandre/docker-multi-cpp-alpine mcandre/docker-multi-cpp-debian mcandre/docker-multi-cpp-ubuntu mcandre/docker-multi-cpp-opensuse mcandre/docker-multi-cpp-fedora mcandre/docker-multi-cpp-centos mcandre/docker-multi-cpp-arch mcandre/docker-multi-cpp-slackware mcandre/docker-multi-cpp-mageia
+.PHONY: mcandre/docker-multi-cpp-alpine mcandre/docker-multi-cpp-debian mcandre/docker-multi-cpp-ubuntu mcandre/docker-multi-cpp-opensuse mcandre/docker-multi-cpp-fedora mcandre/docker-multi-cpp-centos mcandre/docker-multi-cpp-arch mcandre/docker-multi-cpp-slackware mcandre/docker-multi-cpp-mageia mcandre/docker-multi-cpp-void
 
-all: mcandre/docker-multi-cpp-alpine mcandre/docker-multi-cpp-debian mcandre/docker-multi-cpp-ubuntu mcandre/docker-multi-cpp-opensuse mcandre/docker-multi-cpp-fedora mcandre/docker-multi-cpp-centos mcandre/docker-multi-cpp-arch mcandre/docker-multi-cpp-slackware mcandre/docker-multi-cpp-mageia
+all: mcandre/docker-multi-cpp-alpine mcandre/docker-multi-cpp-debian mcandre/docker-multi-cpp-ubuntu mcandre/docker-multi-cpp-opensuse mcandre/docker-multi-cpp-fedora mcandre/docker-multi-cpp-centos mcandre/docker-multi-cpp-arch mcandre/docker-multi-cpp-slackware mcandre/docker-multi-cpp-mageia mcandre/docker-multi-cpp-void
 
 mcandre/docker-multi-cpp-alpine: alpine/Dockerfile
 	docker build -t mcandre/docker-multi-cpp:alpine alpine
@@ -29,6 +29,9 @@ mcandre/docker-multi-cpp-slackware: slackware/Dockerfile
 mcandre/docker-multi-cpp-mageia: mageia/Dockerfile
 	docker build -t mcandre/docker-multi-cpp:mageia mageia
 
+mcandre/docker-multi-cpp-void: void/Dockerfile
+	docker build -t mcandre/docker-multi-cpp:void void
+
 publish-alpine: mcandre/docker-multi-cpp-alpine
 	docker push mcandre/docker-multi-cpp:alpine
 
@@ -56,4 +59,7 @@ publish-slackware: mcandre/docker-multi-cpp-slackware
 publish-mageia: mcandre/docker-multi-cpp-mageia
 	docker push mcandre/docker-multi-cpp:mageia
 
-publish: publish-alpine publish-debian publish-ubuntu publish-opensuse publish-fedora publish-centos publish-arch publish-slackware publish-mageia
+publish-void: mcandre/docker-multi-cpp-void
+	docker push mcandre/docker-multi-cpp:void
+
+publish: publish-alpine publish-debian publish-ubuntu publish-opensuse publish-fedora publish-centos publish-arch publish-slackware publish-mageia publish-void
